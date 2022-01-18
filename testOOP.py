@@ -1,7 +1,4 @@
 
-from os import name
-
-
 class Cat:
     name_class = "Nekos~ (/≧▽≦)/ (⓿_⓿)"
 
