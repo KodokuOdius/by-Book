@@ -1,4 +1,4 @@
-# Rep code from Book
+# Rep for code from Book
 - [ ] Read all
 - [ ] Learn all
 - [ ] Research all Code
