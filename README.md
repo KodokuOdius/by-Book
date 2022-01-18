@@ -1,4 +1,6 @@
-### Reg for Book
+# Rep code from Book
+- [] Read all
+- [] Learn all
+- [] Research all Code
 
-(c)
-KodokuOdius desu ~~~ ╚(•⌂•)╝
+> KodokuOdius desu ~~~ ╚(•⌂•)╝
