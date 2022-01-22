@@ -79,7 +79,7 @@ nums = [
 
 sensors = 15
 weights = [0 for _ in "_" * sensors]
-
+# weights = [1, 1, 1, 2, 0, -7, 1, 2, 1, -7, 0, 1, 1, 1, 1]
 
 def NumPars(sensor = list()):
     porog = 7
@@ -102,7 +102,7 @@ def increase(number = list()):
 
 
 theam = 5
-n = 10000
+n = 100000
 for _ in "_" * n:
     from random import randint
 
@@ -115,6 +115,36 @@ for _ in "_" * n:
     else:
         if not result:
             increase(nums[jn])
+
+print("0 is 5 ?", NumPars(num0))
+print("1 is 5 ?", NumPars(num1))
+print("2 is 5 ?", NumPars(num2))
+print("3 is 5 ?", NumPars(num3))
+print("4 is 5 ?", NumPars(num4))
+print("5 is 5 ?", NumPars(num5))
+print("6 is 5 ?", NumPars(num6))
+print("7 is 5 ?", NumPars(num7))
+print("8 is 5 ?", NumPars(num8))
+print("9 is 5 ?", NumPars(num9))
+
+
+print("===============\n")
+num51 = list('111100111000111')
+num52 = list('111100010001111')
+num53 = list('111100011001111')
+num54 = list('110100111001111')
+num55 = list('110100111001011')
+num56 = list('111100101001111')
+
+print("51 is 5 ?", NumPars(num51))
+print("52 is 5 ?", NumPars(num52))
+print("53 is 5 ?", NumPars(num53))
+print("54 is 5 ?", NumPars(num54))
+print("55 is 5 ?", NumPars(num55))
+print("56 is 5 ?", NumPars(num56))
+
+
+
 
 
 print(weights)
