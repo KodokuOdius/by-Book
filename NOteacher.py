@@ -1,5 +1,5 @@
 import pandas as pd
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -24,7 +24,7 @@ class Parceptron:
     def fit(self, X, y):
         # weights after learning
         # weights of neurons
-        self.w = np.zeros(1 + X.shape(1))
+        self.w = np.zeros(1 + X.shape[1])
 
         self.errors = []
         
@@ -32,7 +32,7 @@ class Parceptron:
             errors = 0
 
             for xi, target in zip(X, y):
-                update = self.speed * (target - self.predict())
+                update = self.speed * (target - self.predict(xi))
 
                 self.w[1:] += update * xi
                 self.w[0] += update
@@ -46,7 +46,7 @@ class Parceptron:
         return np.dot(X, self.w[1:]) + self.w[0]
 
     # return target of class after ones jump
-    def preduct(self, X):
+    def predict(self, X):
         return np.where(self.net_input(X) >= 0.0, 1, -1)
 
 
@@ -70,25 +70,38 @@ print(y)
 
 
 
-# Первые 50 элементов обучающей выборки (строки 0-50, столбцы О, 1)
-plt.scatter(
-    X[0:50, 0], 
-    X[0:50, 1], 
-    color='red', 
-    marker='o', 
-    lаЬеl='щетинистый'
-)
-# Следующие 50 элементов обучающей выборки (строки 50-100, столбцы·о, 1)
-plt.scatter(
-    X[50:100, 0], 
-    X[50:100, 1], 
-    color='Ьlue', 
-    marker='x',
-    lаЬеl='разноцветный'
-)
-# Формирование названий осей и вывод графика на экран
-plt.хlаЬеl('Длина чашелистика') 
-plt.ylabel('Длина лепестка')
+# # Первые 50 элементов обучающей выборки (строки 0-50, столбцы - 0, 1)
+# plt.scatter(
+#     X[0:50, 0], 
+#     X[0:50, 1], 
+#     c='red', 
+#     marker='o', 
+#     label='щетинистый'
+# )
+# # Следующие 50 элементов обучающей выборки (строки 50-100, столбцы - 0, 1)
+# plt.scatter(
+#     X[50:100, 0], 
+#     X[50:100, 1], 
+#     c='blue', 
+#     marker='x',
+#     label='разноцветный'
+# )
+# # Формирование названий осей и вывод графика на экран
+# plt.xlabel('Длина чашелистика') 
+# plt.ylabel('Длина лепестка')
 
-plt.legend(loc='upper left')
+# plt.legend(loc='upper left')
+# plt.show()
+
+p = Parceptron(
+    speed=0.01,
+    n=10
+)
+p.fit(X, y)
+
+plt.plot(range(1, len(p.errors) + 1), p.errors, marker='o')
+plt.xlabel('Эпохи')
+plt.ylabel('Чиcлo случаев ошибочной классификации')
 plt.show()
+
+
