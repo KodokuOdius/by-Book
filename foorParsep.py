@@ -47,8 +47,10 @@ while True:
     c += delta * speed
 
     if test(x):
+        print("TEST")
         break
-    if i == 10000000:
+    if i == 100000000:
+        print("NON TEST")
         break
     
 
